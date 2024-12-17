@@ -9,9 +9,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Alegreya Sans', sans-serif;
+
         }
 
-        body {
+        /* body {
             height: 100vh;
   	        width: 100vw;
             font-family: 'Alegreya Sans', sans-serif;
@@ -25,14 +27,10 @@
             left: 0;
             z-index: 0;
             overflow: auto; 
-            
-        }
-
-        .wrap{
-            position: relative;
-        }
+        } */
 
         header {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -41,10 +39,11 @@
             align-items: center;
             justify-content: space-evenly;
             padding: 0 20px;
-            z-index: 10;
+            z-index: 1001;
         }
 
         header .logo {
+            /* position: absolute; */
             left: 20px;
             width: 150px;
             height: 150px;
@@ -54,9 +53,7 @@
 
         header nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+            gap: 20px;
         }
 
         header nav a {
@@ -71,12 +68,24 @@
             text-decoration-color: black;
         }
 
+        .bg{
+            background: url("assets/img/bg.webp");
+            background-repeat: no-repeat;
+            background-position: center center;  
+            height: 100lvh;
+            width: 100vw;
+            position: fixed;
+            z-index: 100;
+        }
+
         main {
+            width: 100%;
+            margin-top: 15vh;
+            position: absolute;
             display: flex;
             justify-content: center;
-            align-items: center;
             padding: 20px;
-            text-align: center;
+            z-index: 100;
         }
 
         .message {
@@ -115,6 +124,9 @@
         }
 
         @media (max-width: 480px) {
+            main{
+                margin-top: 25vh;
+            }
             .message {
                 font-size: 12px;
             }
@@ -144,25 +156,27 @@
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <header>
+    <div class="bg"></div>
+    <header>
+        <a href="https://ravishingculture.pl/">
             <div class="logo"></div>
-            <nav>
-                <a href="https://ravishingculture.pl/">Home</a>
-                <a href="https://ravishingculture.pl/pl/c/Glowna/38">Shop</a>
-                <a href="index.html">Lookbook</a>
-                <a href="vision.html">Vision</a>
-            </nav>
-        </header>
-        <main>
-            <div class="message graffiti">
-                POWSTALIŚMY PO TO, ABY OBUDZIĆ GŁOS OSÓB, KTÓRE NIE BOJĄ SIĘ WALCZYĆ O SWOJE I PRAGNĄ ŻYĆ WEDŁUG WŁASNYCH ZASAD.<br><br>
-                RAVISHING TO NIE TYLKO MARKA, TO STYL ŻYCIA KTOREGO NIE PODROBISZ. BRUD ULIC JEST Z NAMI OD LAT, DLA JEDNYCH TO ODSKOCZNIA OD CODZIENNEJ WALKI, DLA INNYCH TO SPOSÓB NA ŻYCIE, DLA NAS JEST ONA MIEJSCEM PEŁNYM INSPIRACJI.<br><br>
-                CHCEMY WAM POKAZAĆ ŻE CIĄGŁY GRIND ZAPROWADZI NAS NA SZCZYT, NIE WAŻNE GDZIE ZACZĘLIŚMY. TO CO NAPĘDZA NAS DO TWORZENIA TO NIENAWIŚĆ DO PRZYJĘTYCH WZORCÓW I NAKAZÓW, NIE BĘDZIEMY WPASOWYWAĆ SIĘ W TRENDY, MY JE TWORZYMY. NIE JESTEŚMY KOLEJNĄ MARKĄ, TO COŚ WIĘCEJ NIŻ UBRANIA, TO KULTURA ZMIANY I KREOWANIA SWOJEJ WŁASNEJ RZECZYWISTOŚCI.<br><br>
-                DOŁĄCZ DO NAS I POKAŻ ŻE STAĆ CIĘ NA WIĘCEJ NIŻ CI SIĘ WYDAJE.<br>
-                FROM STREET TO THE APARTAMENTS.
-            </div>
-        </main>
-    </div>
+        </a>
+        <nav>
+            <a href="https://ravishingculture.pl/">Home</a>
+            <a href="https://ravishingculture.pl/pl/c/Glowna/38">Shop</a>
+            <a href="index.html">Lookbook</a>
+            <a href="vision.html">Vision</a>
+        </nav>
+    </header>
+    <main>
+        <div class="message graffiti">
+            POWSTALIŚMY PO TO, ABY OBUDZIĆ GŁOS OSÓB, KTÓRE NIE BOJĄ SIĘ WALCZYĆ O SWOJE I PRAGNĄ ŻYĆ WEDŁUG WŁASNYCH ZASAD.<br><br>
+            RAVISHING TO NIE TYLKO MARKA, TO STYL ŻYCIA KTOREGO NIE PODROBISZ. BRUD ULIC JEST Z NAMI OD LAT, DLA JEDNYCH TO ODSKOCZNIA OD CODZIENNEJ WALKI, DLA INNYCH TO SPOSÓB NA ŻYCIE, DLA NAS JEST ONA MIEJSCEM PEŁNYM INSPIRACJI.<br><br>
+            CHCEMY WAM POKAZAĆ ŻE CIĄGŁY GRIND ZAPROWADZI NAS NA SZCZYT, NIE WAŻNE GDZIE ZACZĘLIŚMY. TO CO NAPĘDZA NAS DO TWORZENIA TO NIENAWIŚĆ DO PRZYJĘTYCH WZORCÓW I NAKAZÓW, NIE BĘDZIEMY WPASOWYWAĆ SIĘ W TRENDY, MY JE TWORZYMY. NIE JESTEŚMY KOLEJNĄ MARKĄ, TO COŚ WIĘCEJ NIŻ UBRANIA, TO KULTURA ZMIANY I KREOWANIA SWOJEJ WŁASNEJ RZECZYWISTOŚCI.<br><br>
+            DOŁĄCZ DO NAS I POKAŻ ŻE STAĆ CIĘ NA WIĘCEJ NIŻ CI SIĘ WYDAJE.<br>
+            FROM STREET TO THE APARTAMENTS.
+        </div>
+    </main>
+    
 </body>
 </html>

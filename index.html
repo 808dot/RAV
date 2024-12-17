@@ -9,9 +9,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Alegreya Sans', sans-serif;
         }
 
-        body {
+        /* body {
             height: 100vh;
   	        width: 100vw;
             font-family: 'Alegreya Sans', sans-serif;
@@ -23,9 +24,10 @@
 
             color: #fff;
             overflow-x: hidden;
-        }
+        } */
 
         header {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -34,7 +36,7 @@
             align-items: center;
             justify-content: space-evenly;
             padding: 0 20px;
-            z-index: 10;
+            z-index: 1001;
         }
 
         header .logo {
@@ -63,10 +65,23 @@
             text-decoration-color: black;
         }
 
+        .bg{
+            background: url("assets/img/bg.webp");
+            background-repeat: no-repeat;
+            background-position: center center;  
+            height: 100lvh;
+            width: 100vw;
+            position: fixed;
+            z-index: 100;
+        }
+
         main {
+            margin-top: 15vh;
+            position: absolute;
             display: flex;
             justify-content: center;
             padding: 20px;
+            z-index: 100;
         }
 
         .gallery {
@@ -108,6 +123,10 @@
 
         @media (max-width: 480px) {
        
+            main{
+                margin-top: 25vh;
+            }
+
             header {
                 flex-direction: column;
                 height: 25vh;
@@ -137,8 +156,11 @@
     </style>
 </head>
 <body>
+    <div class="bg"></div>
     <header>
-        <div class="logo"></div>
+        <a href="https://ravishingculture.pl/">
+            <div class="logo"></div>
+        </a>
         <nav>
             <a href="https://ravishingculture.pl/">Home</a>
             <a href="https://ravishingculture.pl/pl/c/Glowna/38">Shop</a>
@@ -147,18 +169,45 @@
         </nav>
     </header>
 
+
     <main>
-        <section class="gallery" id="lookbook">
-            <img src="assets/img/1.webp" alt="Zdjęcie 1">
-            <img src="assets/img/2.webp" alt="Zdjęcie 1">
-            <img src="assets/img/3.webp" alt="Zdjęcie 1">
-            <img src="assets/img/4.webp" alt="Zdjęcie 1">
-            <img src="assets/img/5.webp" alt="Zdjęcie 1">
-            <img src="assets/img/6.webp" alt="Zdjęcie 1">
-            <img src="assets/img/7.webp" alt="Zdjęcie 1">
-            <img src="assets/img/8.webp" alt="Zdjęcie 1">
-            <img src="assets/img/9.webp" alt="Zdjęcie 1">
-        </section>
+        <section class="gallery" id="lookbook"></section>
+
+        <script>
+            // Lista zdjęć (musisz podać ścieżki ręcznie)
+            const imageFolder = 'assets/img/lookbook/';
+            const imageNames = [
+            '1.webp',
+            '2.webp',
+            '3.webp',
+            '4.webp',
+            '5.webp',
+            '7.webp',
+            '7.5.webp',
+            '8.webp',
+            '9.webp',
+            '10.webp',
+            '11.webp',
+            '12.webp',
+            '13.webp',
+            '14.webp',
+            '15.webp',
+            '16.webp',
+            '17.webp',
+            '18.webp',
+            ];
+
+
+            const gallerySection = document.getElementById('lookbook');
+
+            // Tworzenie elementów <img> dla każdego zdjęcia
+            imageNames.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imageFolder + image;
+                imgElement.alt = 'Zdjęcie z lookbooka';
+                gallerySection.appendChild(imgElement);
+            });
+        </script>
     </main>
 </body>
 </html>
