@@ -42,7 +42,7 @@
         header nav a {
             text-decoration: none;
             color: #fff;
-            font-size: 18px;
+            font-size: clamp(18px, 1.2vw, 28px);
             transition: color 0.3s, text-decoration-color 0.3s;
         }
 
@@ -55,14 +55,15 @@
             background: url("assets/img/bg.webp");
             background-repeat: no-repeat;
             background-position: center center;  
-            height: 100lvh;
+            background-size: cover;
+            height: 100vh;
             width: 100vw;
             position: fixed;
             z-index: 100;
         }
 
         main {
-            width: 100%;
+            width: 100vw;
             margin-top: 15vh;
             position: absolute;
             display: flex;
